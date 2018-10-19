@@ -1,4 +1,12 @@
-class Spaceship //extends Floater  
+class Spaceship extends Floater  
 {   
-    //your code here
+    setX(int x)
+    {
+    	myCenterX = x;
+
+    }
+    getX()
+    {
+    	return myCenterX;
+    }
 }
