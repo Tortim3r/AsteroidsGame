@@ -1,5 +1,9 @@
 class Spaceship extends Floater  
 {   
+	Spaceship()
+	{
+		corners = 9;
+	}
     setX(int x)
     {
     	myCenterX = x;
@@ -7,6 +11,6 @@ class Spaceship extends Floater
     }
     getX()
     {
-    	return myCenterX;
+    	return myCenterX; 
     }
 }
