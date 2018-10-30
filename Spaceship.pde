@@ -3,10 +3,10 @@ class Spaceship extends Floater
 	Spaceship()
 	{
 		
-        corners = 9;  //the number of corners, a triangular floater has 3   
+        corners = 10;  //the number of corners, a triangular floater has 3   
         xCorners = new int[corners];   
         yCorners = new int[corners];
-        xCorners[0] = -3;
+        xCorners[0] = -1;
         yCorners[0] = 0;
         xCorners[1] = -6;
         yCorners[1] = -3;
@@ -14,11 +14,11 @@ class Spaceship extends Floater
         yCorners[2] = -7;
         xCorners[3] = -5;
         yCorners[3] = -10;
-        xCorners[4] = 5;
+        xCorners[4] = 3;
         yCorners[4] = -10;
-        xCorners[5] = 13;
+        xCorners[5] = 12;
         yCorners[5] = 0;
-        xCorners[6] = 5;
+        xCorners[6] = 3;
         yCorners[6] = 10;
         xCorners[7] = -5;
         yCorners[7] = 10;
@@ -26,16 +26,9 @@ class Spaceship extends Floater
         yCorners[8] = 7;
         xCorners[9] = -6;
         yCorners[9] = 3;
-
-
-
-
-
-
-
-        myColor = 0;   
-        myCenterX = 0;
-        myCenterY = 0; //holds center coordinates   
+        myColor = #FFFF00;   
+        myCenterX = 400;
+        myCenterY = 400; //holds center coordinates   
         myDirectionX = 0;
         myDirectionY = 0; //holds x and y coordinates of the vector for direction of travel   
         myPointDirection = 0;

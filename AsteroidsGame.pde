@@ -1,10 +1,20 @@
-//your variable declarations here
+Spaceship mett;
 public void setup() 
 {
-  //your code here
+	size(800,800);
+	mett = new Spaceship();
 }
 public void draw() 
 {
-  //your code here
+  	mett.show();
 }
-
+public void keyPressed()
+{
+	if (key == 'f')
+	{	
+		mett.setX((int)(Math.random()*800));
+		mett.setY((int)(Math.random()*800));
+		mett.setDirectionX(0);
+		mett.setDirectionY(0);
+	} 
+}
