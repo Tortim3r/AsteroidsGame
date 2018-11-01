@@ -27,11 +27,11 @@ public void keyPressed()
 	}
 	if (key == 'a')
 	{
-		mett.setPointDirection(20);
+		mett.setPointDirection((int)(mett.getPointDirection())+10);
 	}
 	if (key == 'd')
 	{
-		mett.setPointDirection(2);
+		mett.setPointDirection((int)(mett.getPointDirection())-10);
 	}
 
 }

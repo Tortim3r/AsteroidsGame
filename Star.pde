@@ -1,4 +1,14 @@
+
 class Star //note that this class does NOT extend Floater
 {
-  //your code here
+	int myX,myY,mySize;
+  	public Star()
+  	{
+  		myX = (int)(Math.random()*800);
+  		myY = (int)(Math.random()*800);
+  	}
+  	public void show()
+  	{
+  		ellipse(myX,myY,mySize,mySize);
+  	}
 }
