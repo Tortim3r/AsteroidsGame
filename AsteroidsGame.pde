@@ -1,11 +1,22 @@
 Spaceship mett;
+Star[] aton = new Star[100];
 public void setup() 
 {
 	size(800,800);
 	mett = new Spaceship();
+	for(int i = 0; i < aton.length;i++)
+	{
+		aton[i] = new Star();
+	}
 }
 public void draw() 
 {
+	//background(0);
+	for(int i = 0; i < aton.length;i++)
+	{
+		aton[i].show();
+	}
+
   	mett.show();
   	mett.move();
 }
@@ -21,17 +32,19 @@ public void keyPressed()
 	} 
 	if (key == 'w')
 	{	
-
-		mett.setDirectionX((Math.cos((float)(mett.getPointDirection()))));
-		mett.setDirectionY((Math.sin((float)(mett.getPointDirection()))));
+		mett.accelerate(0.2);	
+	}
+	if (key == 's')
+	{	
+		mett.accelerate(-0.2);	
 	}
 	if (key == 'a')
 	{
-		mett.setPointDirection((int)(mett.getPointDirection())+10);
+		mett.turn(-10);
 	}
 	if (key == 'd')
 	{
-		mett.setPointDirection((int)(mett.getPointDirection())-10);
+		mett.turn(10);
 	}
 
 }
