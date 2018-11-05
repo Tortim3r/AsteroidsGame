@@ -11,7 +11,7 @@ public void setup()
 }
 public void draw() 
 {
-	//background(0);
+	background(25,25,112);
 	for(int i = 0; i < aton.length;i++)
 	{
 		aton[i].show();
