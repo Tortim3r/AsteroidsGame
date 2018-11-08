@@ -1,6 +1,6 @@
-class Spaceship extends Floater  
-{   
-	public Spaceship()
+class Asteroid extends Floater
+{
+	public Asteroid()
 	{
 		
         corners = 10;  //the number of corners, a triangular floater has 3   
