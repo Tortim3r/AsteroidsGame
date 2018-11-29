@@ -1,5 +1,6 @@
 class Asteroid extends Floater
 {
+	private int spoin;
 	public Asteroid()
 	{
 		
@@ -30,7 +31,35 @@ class Asteroid extends Floater
         myDirectionX = 0;
         myDirectionY = 0; //holds x and y coordinates of the vector for direction of travel   
         myPointDirection = 0;
+        spoin = (int)(Math.random()*5)-5;
 	}
+	
+	public void move ()   //move the floater in the current direction of travel
+  	{     
+	  	turn(spoin);   
+	        
+	    myCenterX += myCenterX+=5;    
+	    myCenterY += myCenterY+=5;     
+
+	        
+	    if(myCenterX >width)
+	    {     
+	      myCenterX = 0;    
+	    }    
+	    else if (myCenterX<0)
+	    {     
+	      myCenterX = width;    
+	    }    
+	    if(myCenterY >height)
+	    {    
+	      myCenterY = 0;    
+	    } 
+	    
+	    else if (myCenterY < 0)
+	    {     
+	      myCenterY = height;    
+	    }   
+  	}   
     public void setX(int x){myCenterX = x;}
     public int getX(){return (int)(myCenterX);}
     public void setY(int y){myCenterY = y;}

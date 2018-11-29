@@ -4,6 +4,7 @@ public void setup()
 {
 	size(800,800);
 	mett = new Spaceship();
+	
 	for(int i = 0; i < aton.length;i++)
 	{
 		aton[i] = new Star();
