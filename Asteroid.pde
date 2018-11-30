@@ -25,7 +25,7 @@ class Asteroid extends Floater
         yCorners[7] = -4;
         xCorners[8] = -2;
         yCorners[8] = 0;
-        myColor = #FFFF00;   
+        myColor = #FFFFFF;   
         myCenterX = 400;
         myCenterY = 400; //holds center coordinates   
         myDirectionX = 0;
@@ -33,13 +33,14 @@ class Asteroid extends Floater
         myPointDirection = 0;
         spoin = (int)(Math.random()*5)-5;
 	}
-	
+	private double move1 = (Math.random()*10)-5;
+	private double move2 = (Math.random()*10)-5;
 	public void move ()   //move the floater in the current direction of travel
   	{     
 	  	turn(spoin);   
 	        
-	    myCenterX += myCenterX+=5;    
-	    myCenterY += myCenterY+=5;     
+	    myCenterX += move1;    
+	    myCenterY += move2;     
 
 	        
 	    if(myCenterX >width)
