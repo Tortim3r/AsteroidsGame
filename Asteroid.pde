@@ -26,8 +26,8 @@ class Asteroid extends Floater
         xCorners[8] = -2;
         yCorners[8] = 0;
         myColor = #FFFFFF;   
-        myCenterX = 400;
-        myCenterY = 400; //holds center coordinates   
+        myCenterX = (Math.random()*800);
+        myCenterY = (Math.random()*800); //holds center coordinates   
         myDirectionX = 0;
         myDirectionY = 0; //holds x and y coordinates of the vector for direction of travel   
         myPointDirection = 0;

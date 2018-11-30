@@ -1,6 +1,7 @@
 Spaceship mett;
 Star[] aton = new Star[100];
-Asteroid[] bolt = new Asteroid[20];
+
+ArrayList <Asteroid> bolt = new ArrayList <Asteroid>();
 public void setup() 
 {
 	size(800,800);
@@ -10,9 +11,9 @@ public void setup()
 	{
 		aton[i] = new Star();
 	}
-	for(int i = 0; i < bolt.length;i++)
+	for(int i = 0; i < 20;i++)
 	{
-		bolt[i] = new Asteroid();
+		bolt.add(new Asteroid());
 	}
 }
 public void draw() 
@@ -22,10 +23,10 @@ public void draw()
 	{
 		aton[i].show();
 	}
-	for(int i = 0; i < bolt.length;i++)
+	for(int i = 0; i < bolt.size();i++)
 	{
-		bolt[i].show();
-  		bolt[i].move();
+		bolt.get(i).show();
+  		bolt.get(i).move();
 	}
   	mett.show();
   	mett.move();
