@@ -27,9 +27,15 @@ public void draw()
 	{
 		bolt.get(i).show();
   		bolt.get(i).move();
+  		if(dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY()  < 15))
+  			bolt.remove(i);
+  		
+  		
+  		
 	}
   	mett.show();
   	mett.move();
+
   	
 }
 public void keyPressed()
