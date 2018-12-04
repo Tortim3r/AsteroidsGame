@@ -16,6 +16,7 @@ public void setup()
 		bolt.add(new Asteroid());
 	}
 }
+
 public void draw() 
 {
 	background(25,25,112);
@@ -27,7 +28,8 @@ public void draw()
 	{
 		bolt.get(i).show();
   		bolt.get(i).move();
-  		if(dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY()  < 15))
+  		float space = dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY());
+  		if(space  < 20)
   			bolt.remove(i);
   		
   		
