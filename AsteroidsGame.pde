@@ -1,11 +1,13 @@
 Spaceship mett;
 Star[] aton = new Star[100];
 
+ArrayList <Bullet> phys = new ArrayList <Bullet>();
 ArrayList <Asteroid> bolt = new ArrayList <Asteroid>();
 public void setup() 
 {
 	size(800,800);
 	mett = new Spaceship();
+	
 	
 	for(int i = 0; i < aton.length;i++)
 	{
@@ -28,16 +30,34 @@ public void draw()
 	{
 		bolt.get(i).show();
   		bolt.get(i).move();
-  		float space = dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY());
-  		if(space  < 20)
-  			bolt.remove(i);
-  		
-  		
-  		
+//  	float space = dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY());
+//		if(space  < 20)
+//		bolt.remove(i);
+
+		for(int o = 0; o < phys.size();o++)
+		{
+			phys.get(o).show();
+	  		phys.get(o).move();
+	  		float space = dist(phys.get(o).getX(),phys.get(o).getY(),bolt.get(i).getX(),bolt.get(i).getY());
+	  		if(space  < 20)
+	  			bolt.remove(i);
+	  			
+
+			}
 	}
   	mett.show();
   	mett.move();
+  	/*
+  	for(int o = 0; o < phys.size();o++)
+	{
+		phys.get(o).show();
+  		phys.get(o).move();
+  		float space = dist(phys.get(o).getX(),phys.get(o).getY(),bolt.get(i).getX(),bolt.get(i).getY());
+  		if(space  < 20)
+  			bolt.remove(i);
 
+	}
+	*/
   	
 }
 public void keyPressed()
@@ -66,5 +86,9 @@ public void keyPressed()
 	{
 		mett.turn(10);
 	}
+	if (key == 'v')
+	{
+		phys.add(new Bullet(mett));
+	}	
 
 }
