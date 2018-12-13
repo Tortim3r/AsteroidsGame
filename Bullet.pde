@@ -14,6 +14,8 @@ class Bullet extends Floater
 	}
 	public void show()
 	{
+		noStroke();
+		fill(myColor);
 		ellipse((int)(myCenterX),(int)(myCenterY),10,5);
 	}
 	public void move ()   

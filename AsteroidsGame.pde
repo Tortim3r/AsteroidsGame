@@ -18,7 +18,8 @@ public void setup()
 		bolt.add(new Asteroid());
 	}
 }
-
+private int o = 0;
+private int u = 0;
 public void draw() 
 {
 	background(25,25,112);
@@ -26,33 +27,41 @@ public void draw()
 	{
 		aton[i].show();
 	}
-	for(int u = 0; u < bolt.size();u++)
+	for(o = 0; o < phys.size();o++)
+	{
+		phys.get(o).show();
+  		phys.get(o).move();
+	}
+	for(u = 0; u < bolt.size();u++)
 	{
 		bolt.get(u).show();
   		bolt.get(u).move();
 //  	float space = dist(mett.getX(),mett.getY(),bolt.get(i).getX(),bolt.get(i).getY());
 //		if(space  < 20)
 //		bolt.remove(i);
-
+		for(o = 0; o < phys.size();o++)
+		{
+			
+	  		if(phys.get(o).getX() > 800 || phys.get(o).getX() < 0 || phys.get(o).getY() > 800 || phys.get(o).getY() < 0)
+	  		{
+	  			phys.remove(o);
+	  		}else if(dist(phys.get(o).getX(),phys.get(o).getY(),bolt.get(u).getX(),bolt.get(u).getY())<15){
+	  			phys.remove(o);
+	  			bolt.remove(u);
+	  			break;
+	  		}
+	  		//float space = dist(phys.get(o).getX(),phys.get(o).getY(),bolt.get(u).getX(),bolt.get(u).getY());
+	  		
+	  		//if(space  < 15)
+	 		//{
+	  		//	bolt.remove(u);
+	  		//	phys.remove(o);
+	  		//	break;
+	  		//}
+	 	}
 		
 	}	
-	for(int o = 0; o < phys.size();o++)
-	{
-		phys.get(o).show();
-  		phys.get(o).move();
-  		if(phys.get(o).getX() > 800 || phys.get(o).getX() < 0 || phys.get(o).getY() > 80 || phys.get(o).getY() < 0)
-  		{
-  			phys.remove(o);
-  		}
-  		//float space = dist(phys.get(o).getX(),phys.get(o).getY(),bolt.get(u).getX(),bolt.get(u).getY());
-  		
-  		//if(space  < 15)
- 		//{
-  		//	bolt.remove(u);
-  		//	phys.remove(o);
-  		//	break;
-  		//}
- 	}	
+		
   	mett.show();
   	mett.move();
   	/*
